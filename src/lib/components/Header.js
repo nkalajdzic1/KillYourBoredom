@@ -6,13 +6,14 @@ import { LINKS } from "lib/constants/links";
 import { Link } from "react-router-dom";
 
 const HeaderWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   padding: 40px 50px;
 `;
 
 const MenuNav = styled.ul`
   display: flex;
+  justify-content: space-between;
   gap: 10px;
   padding: 0;
   margin: 0;
