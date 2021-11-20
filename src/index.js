@@ -1,17 +1,41 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+
+import { Home, Page404 } from "Pages";
+import theme from "lib/styles/theme";
+import GlobalStyle from "lib/styles/GlobalStyle";
+
+export const ROUTES = {
+  BASE: {
+    exact: true,
+    path: "/",
+    element: <Home />,
+  },
+  HOME: {
+    exact: true,
+    path: "/landing",
+    element: <Home />,
+  },
+  PAGE404: {
+    path: "*",
+    element: <Page404 />,
+  },
+};
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme.blackTheme}>
+      <GlobalStyle theme={theme.blackTheme} />
+      <Router>
+        <Routes>
+          {Object.keys(ROUTES).map((x, index) => (
+            <Route {...ROUTES[x]} key={index} />
+          ))}
+        </Routes>
+      </Router>
+    </ThemeProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
