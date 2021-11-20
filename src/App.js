@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { Home, Page404 } from "Pages";
-import { LINKS } from "./constants/links";
+import { Home, Page404 } from "pages";
+import { LINKS } from "./lib/constants/links";
 
 export const ROUTES = [
   {

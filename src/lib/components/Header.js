@@ -3,11 +3,29 @@ import styled from "styled-components";
 
 import Menu from "./Menu";
 import { LINKS } from "lib/constants/links";
+import { Link } from "react-router-dom";
 
 const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 50px;
+  padding: 40px 50px;
+`;
+
+const MenuNav = styled.ul`
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+
+  li > a {
+    text-decoration: none;
+    color: ${({ theme }) => theme.color};
+  }
 `;
 
 const links = [
@@ -28,8 +46,15 @@ const links = [
 function Header() {
   return (
     <HeaderWrapper>
-      <div>Lorem ipsum</div>
-      <Menu side="right" links={links} />
+      <div>Logo</div>
+      <MenuNav>
+        {links.map((x, i) => (
+          <li key={i}>
+            <Link to={x.href}>{x.name}</Link>
+          </li>
+        ))}
+      </MenuNav>
+      <Menu side="right" disappearingWidth={700} links={links} />
     </HeaderWrapper>
   );
 }

@@ -1,12 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 import { useOnClickOutside } from "lib/hooks";
 
+const MenuWrapper = styled.div`
+  ${({ disappearingWidth }) =>
+    disappearingWidth &&
+    `@media (min-width: ${disappearingWidth}px) {
+      display: none;
+    }`};
+`;
+
 const StyledBurger = styled.button`
   position: absolute;
-  top: 30px;
+  top: 40px;
   ${({ side }) => (side === "left" ? "left" : "right")}: 30px;
   display: flex;
   flex-direction: column;
@@ -88,14 +97,14 @@ const StyledMenu = styled.nav`
   }
 `;
 
-function Menu({ side, links }) {
+function Menu({ side, links, disappearingWidth }) {
   const [open, setOpen] = React.useState(false);
   const menuRef = React.useRef();
 
   useOnClickOutside(menuRef, () => setOpen(false));
 
   return (
-    <div ref={menuRef}>
+    <MenuWrapper disappearingWidth={disappearingWidth} ref={menuRef}>
       <StyledBurger side={side} open={open} onClick={() => setOpen(!open)}>
         <div />
         <div />
@@ -108,8 +117,14 @@ function Menu({ side, links }) {
           </Link>
         ))}
       </StyledMenu>
-    </div>
+    </MenuWrapper>
   );
 }
+
+Menu.propTypes = {
+  side: PropTypes.oneOf(["left", "right"]).isRequired,
+  links: PropTypes.array,
+  disappearingWidth: PropTypes.number,
+};
 
 export default Menu;

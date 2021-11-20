@@ -1,2 +1,2 @@
-export { default as Home } from "Pages/Home";
-export { default as Page404 } from "Pages/Page404";
+export { default as Home } from "pages/Home";
+export { default as Page404 } from "pages/Page404";
