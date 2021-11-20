@@ -1,7 +1,8 @@
-import { ROUTES } from "index";
 import React from "react";
 import styled from "styled-components";
+
 import Menu from "./Menu";
+import { LINKS } from "lib/constants/links";
 
 const HeaderWrapper = styled.div`
   display: flex;
@@ -12,22 +13,22 @@ const HeaderWrapper = styled.div`
 const links = [
   {
     name: "About us",
-    href: ROUTES.BASE.path,
+    href: LINKS.BASE.path,
   },
   {
     name: "Pricing",
-    href: ROUTES.BASE.path,
+    href: LINKS.BASE.path,
   },
   {
     name: "Contact",
-    href: ROUTES.BASE.path,
+    href: LINKS.BASE.path,
   },
 ];
 
 function Header() {
   return (
     <HeaderWrapper>
-      <div style={{ fontSize: 25 }}>Lorem</div>
+      <div>Lorem ipsum</div>
       <Menu side="right" links={links} />
     </HeaderWrapper>
   );

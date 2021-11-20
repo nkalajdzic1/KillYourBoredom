@@ -1,7 +1,8 @@
-import { useOnClickOutside } from "lib/hooks";
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+
+import { useOnClickOutside } from "lib/hooks";
 
 const StyledBurger = styled.button`
   position: absolute;
