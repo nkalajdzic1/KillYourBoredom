@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 import Menu from "./Menu";
 import { LINKS } from "lib/constants/links";
-import { Link } from "react-router-dom";
 
 const HeaderWrapper = styled.div`
   display: grid;
@@ -11,22 +10,9 @@ const HeaderWrapper = styled.div`
   padding: 40px 50px;
 `;
 
-const MenuNav = styled.ul`
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-
-  @media (max-width: 700px) {
-    display: none;
-  }
-
-  li > a {
-    text-decoration: none;
-    color: ${({ theme }) => theme.color};
-  }
+const Logo = styled.div`
+  font-size: ${({ theme }) => theme.fonts.logo};
+  font-family: "Megrim", cursive;
 `;
 
 const links = [
@@ -47,15 +33,8 @@ const links = [
 function Header() {
   return (
     <HeaderWrapper>
-      <div>Logo</div>
-      <MenuNav>
-        {links.map((x, i) => (
-          <li key={i}>
-            <Link to={x.href}>{x.name}</Link>
-          </li>
-        ))}
-      </MenuNav>
-      <Menu side="right" disappearingWidth={700} links={links} />
+      <Logo>Random Fake Users</Logo>
+      <Menu side="right" links={links} />
     </HeaderWrapper>
   );
 }

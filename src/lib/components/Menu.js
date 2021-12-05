@@ -112,7 +112,7 @@ function Menu({ side, links, disappearingWidth }) {
       </StyledBurger>
       <StyledMenu side={side} open={open}>
         {links.map((x, i) => (
-          <Link key={i} to={x.href}>
+          <Link key={`nav-menu-${i}`} to={x.href}>
             {x.name}
           </Link>
         ))}

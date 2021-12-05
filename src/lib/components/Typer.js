@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 const Typer = ({ text: dataText, className }) => {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
