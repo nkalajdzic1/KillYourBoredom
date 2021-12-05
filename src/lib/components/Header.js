@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import Menu from "./Menu";
 import { LINKS } from "lib/constants/links";
+import { Link } from "react-router-dom";
 
 const HeaderWrapper = styled.div`
   display: grid;
@@ -15,14 +16,19 @@ const Logo = styled.div`
   font-family: "Megrim", cursive;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.color};
+`;
+
 const links = [
   {
-    name: "About us",
+    name: "HOME",
     href: LINKS.BASE.path,
   },
   {
-    name: "Pricing",
-    href: LINKS.BASE.path,
+    name: "GOT BORED?",
+    href: LINKS.ACTIVITY_SUGGESTION.path,
   },
   {
     name: "Contact",
@@ -33,7 +39,9 @@ const links = [
 function Header() {
   return (
     <HeaderWrapper>
-      <Logo>Random Fake Users</Logo>
+      <StyledLink to={LINKS.BASE.path}>
+        <Logo>Kill your boredom</Logo>
+      </StyledLink>
       <Menu side="right" links={links} />
     </HeaderWrapper>
   );

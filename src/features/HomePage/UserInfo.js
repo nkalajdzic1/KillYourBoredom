@@ -44,7 +44,7 @@ function UserInfo({ data }) {
           <summary>Location info</summary>
           <StyledLabel>Country: {location.country}</StyledLabel>
           <StyledLabel>State: {location.state}</StyledLabel>
-          <StyledLabel>City: {location.city}</StyledLabel>x
+          <StyledLabel>City: {location.city}</StyledLabel>
           <StyledLabel>Post code: {location.postcode}</StyledLabel>
           <StyledLabel>
             Address: {`${location.street.name} ${location.street.number}`}

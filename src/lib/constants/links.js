@@ -5,6 +5,9 @@ export const LINKS = {
   HOME: {
     path: "/landing",
   },
+  ACTIVITY_SUGGESTION: {
+    path: "/activity_suggestion",
+  },
   PAGE404: {
     path: "*",
   },

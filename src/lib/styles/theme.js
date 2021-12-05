@@ -2,6 +2,8 @@ const colors = {
   black: "#1C1C1C",
   white: "#F3F3F3",
   lightGrey: "#0d0c1d87",
+  lightPink: "#de7a7a",
+  lightRed: "#c64141",
 };
 
 const fonts = {
@@ -13,6 +15,8 @@ const fonts = {
 const theme = {
   blackTheme: {
     fonts: { ...fonts },
+    linkColor: colors.lightRed,
+    hoveredLinkColor: colors.lightPink,
     backgroundColor: colors.black,
     color: colors.white,
     linkHover: colors.lightGrey,

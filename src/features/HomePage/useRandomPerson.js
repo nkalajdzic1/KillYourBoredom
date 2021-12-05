@@ -6,7 +6,9 @@ import API from "API";
  */
 const useRandomPerson = () => {
   const httpResponse = useQuery("randomPersons", async () => {
-    const apiClient = new API(process.env.REACT_APP_API_URL).getInstance();
+    const apiClient = new API(
+      process.env.REACT_APP_RANDOM_PERSONS_API_URL
+    ).getInstance();
     const res = await apiClient.get("api");
     return res.data;
   });
