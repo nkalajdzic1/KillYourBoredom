@@ -15,8 +15,8 @@ const MenuWrapper = styled.div`
 
 const StyledBurger = styled.button`
   position: absolute;
-  top: 40px;
-  ${({ side }) => (side === "left" ? "left" : "right")}: 30px;
+  top: 25px;
+  ${({ side }) => (side === "left" ? "left" : "right")}: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

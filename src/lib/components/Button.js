@@ -11,6 +11,7 @@ const StyledButton = styled.button`
   background-color: transparent;
   color: ${({ theme }) => theme.color};
   font-size: ${({ theme }) => theme.fonts.button};
+  font-family: ${({ theme }) => theme.fontFamilyDefault};
   line-height: 42px;
   outline: 2px solid white;
   transition: all 0.3s ease;

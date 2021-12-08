@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const HeaderWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 40px 50px;
+  padding: 25px 25px;
 `;
 
 const Logo = styled.div`

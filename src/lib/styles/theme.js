@@ -1,9 +1,13 @@
 const colors = {
   black: "#1C1C1C",
   white: "#F3F3F3",
-  lightGrey: "#0d0c1d87",
+  lightGrey: "#d2d0d0",
   lightPink: "#de7a7a",
   lightRed: "#c64141",
+};
+
+const fontFamilies = {
+  fontPoppins: "'Poppins', sans-serif",
 };
 
 const fonts = {
@@ -14,7 +18,9 @@ const fonts = {
 
 const theme = {
   blackTheme: {
+    colors: { ...colors },
     fonts: { ...fonts },
+    fontFamilyDefault: fontFamilies.fontPoppins,
     linkColor: colors.lightRed,
     hoveredLinkColor: colors.lightPink,
     backgroundColor: colors.black,

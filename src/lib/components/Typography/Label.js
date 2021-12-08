@@ -6,6 +6,6 @@ const StyledLabel = styled.div`
   color: ${({ theme, color }) => (color ? color : theme.color)};
 `;
 
-export default function Label({ children, className }) {
-  return <StyledLabel className={className}>{children}</StyledLabel>;
+export default function Label({ children, ...rest }) {
+  return <StyledLabel {...rest}>{children}</StyledLabel>;
 }
