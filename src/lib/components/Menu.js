@@ -58,6 +58,7 @@ const StyledBurger = styled.button`
 `;
 
 const StyledMenu = styled.nav`
+  z-index: 9;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -110,7 +111,7 @@ function Menu({ side, links, disappearingWidth }) {
         <div />
         <div />
       </StyledBurger>
-      <StyledMenu side={side} open={open}>
+      <StyledMenu side={side} open={open} className="styled-nav">
         {links.map((x, i) => (
           <Link key={`nav-menu-${i}`} to={x.href}>
             {x.name}
