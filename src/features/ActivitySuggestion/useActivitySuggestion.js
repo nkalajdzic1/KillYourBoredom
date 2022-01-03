@@ -13,7 +13,7 @@ const useActivitySuggestion = (config, queryProps) => {
       const apiClient = new API(
         process.env.REACT_APP_ACTIVITY_SUGGESTION_API_URL
       ).getInstance();
-      const res = await apiClient.get(`/activity${queryProps && queryProps}/`);
+      const res = await apiClient.get(`/activity${queryProps && queryProps}`);
       return res.data;
     },
     config
