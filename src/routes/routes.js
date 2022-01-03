@@ -8,20 +8,24 @@ export const ROUTES = [
   {
     exact: true,
     path: LINKS.BASE.path,
+    title: "Home",
     element: <HomePage />,
   },
   {
     exact: true,
     path: LINKS.HOME.path,
+    title: "Home",
     element: <HomePage />,
   },
   {
     exact: true,
     path: LINKS.ACTIVITY_SUGGESTION.path,
+    title: "Suggestions",
     element: <SuggestionPage />,
   },
   {
     path: LINKS.PAGE404.path,
+    title: "404",
     element: <Page404 />,
   },
 ];
