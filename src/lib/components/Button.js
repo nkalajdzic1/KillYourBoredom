@@ -20,6 +20,10 @@ const StyledButton = styled.button`
     color: ${({ theme }) => theme.backgroundColor};
     background: ${({ theme }) => theme.color};
   }
+
+  &:disabled {
+    background-color: grey;
+  }
 `;
 
 function Button(props) {

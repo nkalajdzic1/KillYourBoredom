@@ -1,5 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
+import { AiOutlineCaretDown } from "react-icons/ai";
 
 import { Button } from "lib/components";
 import { useOnClickOutside, useToggle } from "lib/hooks";
@@ -13,16 +14,19 @@ const Wrapper = styled.div`
 const DropdownButton = styled(Button)`
   outline: none;
   border-bottom: 1px solid ${({ theme }) => theme.color};
-  min-width: 120px;
+  min-width: 150px;
 `;
 
 const DefaultDropdownMenu = styled.div`
-  z-index: 1;
+  z-index: 999;
   position: absolute;
   top: 60px;
   width: 100%;
   color: ${({ theme }) => theme.backgroundColor};
   background-color: ${({ theme }) => theme.color};
+  max-height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
 `;
 
 const DefaultMenuItem = styled.div`
@@ -39,6 +43,16 @@ const DefaultMenuItem = styled.div`
   }
 `;
 
+const StyledArrowDownIcon = styled(AiOutlineCaretDown)`
+  position: absolute;
+  top: 17px;
+  right: 7px;
+`;
+
+const StyledLabel = styled.div`
+  padding-right: 20px;
+`;
+
 const Item = ({ item, onClick }) => {
   return (
     <DefaultMenuItem onClick={() => onClick(item)}>{item.name}</DefaultMenuItem>
@@ -46,30 +60,28 @@ const Item = ({ item, onClick }) => {
 };
 
 function Dropdown({
-  items = [
-    { value: "None", name: "None" },
-    { value: "None1", name: "None1" },
-  ],
+  items = [{ value: "None", name: "None" }],
   CustomMenu = DefaultDropdownMenu,
   MenuItem = Item,
+  value,
+  onChange,
   ...rest
 }) {
-  const [dropdownValue, setDropdownValue] = useState(items[0]);
   const dropdownRef = useRef();
-
   const [open, toggleOpen] = useToggle();
 
   useOnClickOutside(dropdownRef, () => open && toggleOpen());
 
   const onItemClick = (item) => {
-    setDropdownValue(item);
+    onChange && onChange(item);
     toggleOpen();
   };
 
   return (
     <Wrapper ref={dropdownRef}>
       <DropdownButton onClick={() => toggleOpen()}>
-        {dropdownValue.name}
+        <StyledLabel>{value.name}</StyledLabel>
+        <StyledArrowDownIcon />
       </DropdownButton>
       {open && (
         <CustomMenu>
@@ -77,7 +89,7 @@ function Dropdown({
             <MenuItem
               key={`dropdown-item-${i}`}
               item={x}
-              onClick={onItemClick}
+              onClick={() => onItemClick(x)}
               {...rest}
             />
           ))}

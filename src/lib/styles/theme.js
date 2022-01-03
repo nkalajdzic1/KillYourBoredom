@@ -26,6 +26,7 @@ const theme = {
     backgroundColor: colors.black,
     color: colors.white,
     linkHover: colors.lightGrey,
+    errorColor: colors.lightRed,
   },
 };
 

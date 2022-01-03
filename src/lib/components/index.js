@@ -6,3 +6,5 @@ export { default as Page } from "./Page";
 export { default as Typer } from "./Typer";
 export { default as Label } from "./Typography/Label";
 export { default as Dropdown } from "./Dropdown";
+export { default as Input } from "./Input";
+export { default as Checkbox } from "./Checkbox";
