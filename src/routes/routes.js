@@ -1,7 +1,6 @@
 import React from "react";
 
-import { Page404 } from "pages";
-import { HomePage, SuggestionPage } from "features";
+import { HomePage, SuggestionPage, Page404, ContactPage } from "features";
 import { LINKS } from "lib/constants/links";
 
 export const ROUTES = [
@@ -22,6 +21,12 @@ export const ROUTES = [
     path: LINKS.ACTIVITY_SUGGESTION.path,
     title: "Suggestions",
     element: <SuggestionPage />,
+  },
+  {
+    exact: true,
+    path: LINKS.CONTACT.path,
+    title: "Contact",
+    element: <ContactPage />,
   },
   {
     path: LINKS.PAGE404.path,

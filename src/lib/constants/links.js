@@ -8,6 +8,9 @@ export const LINKS = {
   ACTIVITY_SUGGESTION: {
     path: "/activity_suggestion",
   },
+  CONTACT: {
+    path: "/contact",
+  },
   PAGE404: {
     path: "*",
   },

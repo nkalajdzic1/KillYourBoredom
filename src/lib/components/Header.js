@@ -32,7 +32,7 @@ const links = [
   },
   {
     name: "Contact",
-    href: LINKS.BASE.path,
+    href: LINKS.CONTACT.path,
   },
 ];
 

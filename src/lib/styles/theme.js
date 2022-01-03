@@ -4,6 +4,9 @@ const colors = {
   lightGrey: "#d2d0d0",
   lightPink: "#de7a7a",
   lightRed: "#c64141",
+  blue: "royalblue",
+  lightBlue: "#6d91ff",
+  green: "mediumseagreen",
 };
 
 const fontFamilies = {
