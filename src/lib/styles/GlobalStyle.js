@@ -9,6 +9,7 @@ export default createGlobalStyle`
     background-color: ${(props) => props.theme.backgroundColor};
     color: ${(props) => props.theme.color};
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
   }
 
   body {

@@ -63,6 +63,8 @@ const StyledMenu = styled.nav`
   flex-direction: column;
   justify-content: center;
   background: #effffa;
+  ${({ open }) => !open && "display: none;"};
+
   transform: ${({ open, side }) =>
     open ? "translateX(0%)" : `translateX(${side === "left" ? "-" : "+"}100%)`};
   height: 100vh;
